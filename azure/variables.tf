@@ -11,6 +11,13 @@ variable "client_secret" {
   default = ""
 }
 
+variable "client_certificate" {
+  description = "Client certificate for Azure authentication (PEM format with private key and certificate). Pipeline extracts this and converts to PFX format for ARM_CLIENT_CERTIFICATE_PATH."
+  type        = string
+  default     = ""
+  sensitive   = true
+}
+
 variable "tenant_id" {
   type = string
 }
